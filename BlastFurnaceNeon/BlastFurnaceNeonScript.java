@@ -262,10 +262,13 @@ public class BlastFurnaceNeonScript extends Script {
                 Rs2Player.toggleRunEnergy(true);
                 Rs2Bank.depositAll("Stamina potion");
             }
+            if (Rs2Inventory.hasItem("Vial")) {
+                Rs2Bank.depositAll("Vial");
+            }
 
-            if (Rs2Inventory.hasItem(barMaterialOne) && stamina > 3000) {
+            if (Rs2Inventory.hasItem(barMaterialOne) && stamina > 3000 && !Rs2Inventory.hasItem("Stamina potion") && !Rs2Inventory.hasItem("Vial")) {
                 state = states.materialOne;
-            } else if (!Rs2Inventory.hasItem(barMaterialOne) && stamina > 3000) {
+            } else if (!Rs2Inventory.hasItem(barMaterialOne) && stamina > 3000 && !Rs2Inventory.hasItem("Stamina potion") && !Rs2Inventory.hasItem("Vial")) {
                 if (barMaterialTwo.equals("Coal")) {
                     state = states.getCoal;
                 } else {
