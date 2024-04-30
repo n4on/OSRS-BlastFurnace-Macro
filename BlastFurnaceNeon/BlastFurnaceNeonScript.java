@@ -297,8 +297,13 @@ public class BlastFurnaceNeonScript extends Script {
                 } else if (!Rs2Inventory.hasItem(453)) {
                     Rs2Bank.withdrawAll("Coal");
                 }
-            } else if (!Rs2Inventory.hasItem(24480)) {
-                Rs2Bank.withdrawItem(24480);
+            } else if (!Rs2Inventory.hasItem(24480) || !Rs2Inventory.hasItem(12019)) {
+                if (Rs2Bank.hasItem(24480)) {
+                    Rs2Bank.withdrawItem(24480);
+                } else if (Rs2Inventory.hasItem(12019)) {
+                    Rs2Bank.withdrawItem(12019);
+                }
+
             }
         } else if (!Rs2Bank.isOpen()) {
             Rs2Bank.useBank();
