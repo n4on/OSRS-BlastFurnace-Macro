@@ -285,7 +285,7 @@ public class BlastFurnaceNeonScript extends Script {
         System.out.println("\u001B[95m[" + LocalDateTime.now().format(formatter) + "] Getting Coal & " + barMaterialOne + " \u001B[0m");
 
         if (Rs2Bank.isOpen()) {
-            if (Rs2Inventory.hasItem(24480)) {
+            if (Rs2Inventory.hasItem(24480) || Rs2Inventory.hasItem(12019)) {
                 if (Rs2Inventory.hasItem(453)) {
                     Rs2Inventory.combine(24480, 453);
                     sleep(600);
